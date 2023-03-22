@@ -58,6 +58,9 @@ class SparsePolynomial : public sparse_vector_t {
   double Eval(const double) const;
   bool IsEqual(const SparsePolynomial&, const double = EPS) const;
   bool IsEqual(const Polynomial&, const double = EPS) const;
+
+  // Modificación de la clase sparse_polynomial_t
+  int monomial_grade_add() const;
 };
 
 // E/S
@@ -176,6 +179,17 @@ bool SparsePolynomial::IsEqual(const Polynomial& pol, const double eps) const {
     differents = true;
   }
   return !differents;
+}
+
+// Implementación de la modificación de la clase sparse_polynomial_t
+int SparsePolynomial::monomial_grade_add() const {
+  // Suma total de los grados de los monomios
+  int sum = 0;
+  for (int i = 0; i < get_nz(); i++) {
+    if (at(i).get_val() != 0)
+      sum += at(i).get_inx();
+  }
+  return sum;
 }
 
 

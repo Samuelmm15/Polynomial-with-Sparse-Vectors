@@ -91,5 +91,12 @@ int main()
   cout << "sp3 == p2? " << (sp3.IsEqual(p2) ? "true" : "false") << endl;
   cout << endl;
 
+  cout << "IMPLEMENTACIÓN DE LA MODIFICACIÓN" << endl; 
+  cout << "Suma total de los grados de los monomios" << endl;
+  cout << endl;
+  cout << "sp1= " << sp1 << " tiene un total de " << sp1.monomial_grade_add() << " grados" << endl;
+  cout << "sp2= " << sp2 << " tiene un total de " << sp2.monomial_grade_add() << " grados" << endl;
+  cout << "sp3= " << sp3 << " tiene un total de " << sp3.monomial_grade_add() << " grados" << endl;
+
   return 0;
 }
